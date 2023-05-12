@@ -7,10 +7,10 @@ require("rpart")
 require("rpart.plot")
 
 #Aqui se debe poner la carpeta de la materia de SU computadora local
-setwd("X:\\gdrive\\ITBA2023a\\")  #Establezco el Working Directory
+setwd("C:/Users/Admin/Desktop/PABLO.BANDEIRA")  #Establezco el Working Directory
 
 #cargo el dataset
-dataset  <- fread("./datasets/dataset_pequeno.csv")
+dataset  <- fread("C:/Users/Admin/Desktop/PABLO.BANDEIRA/datasets/dataset_pequeno.csv")
 
 dtrain  <- dataset[ foto_mes==202107 ]  #defino donde voy a entrenar
 dapply  <- dataset[ foto_mes==202109 ]  #defino donde voy a aplicar el modelo
@@ -45,9 +45,9 @@ dapply[ , Predicted := as.numeric( prob_baja2 > 1/40 ) ]
 
 #genero el archivo para Kaggle
 #primero creo la carpeta donde va el experimento
-dir.create( "./exp/" )
-dir.create( "./exp/KA2001" )
+dir.create( "C:/Users/Admin/Desktop/PABLO.BANDEIRA/exp/" )
+dir.create( "C:/Users/Admin/Desktop/PABLO.BANDEIRA/exp/KA2001" )
 
 fwrite( dapply[ , list(numero_de_cliente, Predicted) ], #solo los campos para Kaggle
-        file= "./exp/KA2001/K101_001.csv",
+        file= "C:/Users/Admin/Desktop/PABLO.BANDEIRA/exp/KA2001K101_001.csv",
         sep=  "," )
