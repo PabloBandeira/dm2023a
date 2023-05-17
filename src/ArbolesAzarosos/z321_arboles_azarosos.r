@@ -21,13 +21,13 @@ require("rpart")
 
 PARAM <- list()
 PARAM$experimento  <- 3210
-PARAM$semilla  <- 102191      #Establezco la semilla aleatoria, cambiar por SU primer semilla
+PARAM$semilla  <- 27991      #Establezco la semilla aleatoria, cambiar por SU primer semilla
 
 #parameetros rpart
 PARAM$rpart_param   <- list( "cp"=          -1,
-                              "minsplit"=  300,
-                              "minbucket"=  20,
-                              "maxdepth"=   10 )
+                              "minsplit"=  500,
+                              "minbucket"=  100,
+                              "maxdepth"=   14 )
 
 #parametros  arbol
 PARAM$feature_fraction  <- 0.5  #entreno cada arbol con solo 50% de las variables variables
@@ -38,10 +38,10 @@ PARAM$num_trees_max  <- 500 #voy a generar 500 arboles, a mas arboles mas tiempo
 #------------------------------------------------------------------------------
 #Aqui comienza el programa
 
-setwd("X:\\gdrive\\itba2023a\\")  #Establezco el Working Directory
+setwd("C:/Users/Admin/Desktop/PABLO.BANDEIRA")  #Establezco el Working Directory
 
 #cargo los datos
-dataset  <- fread("./datasets/dataset_pequeno.csv")
+dataset  <- fread("C:/Users/Admin/Desktop/PABLO.BANDEIRA/datasets/dataset_pequeno.csv")
 
 
 #creo la carpeta donde va el experimento
@@ -112,6 +112,8 @@ for( arbolito in  1:PARAM$num_trees_max )
 
     cat( arbolito, " " )
   }
+
+
 
   cat( arbolito, "\n" )  #imprimo cada pasada para no angustiarme
 }

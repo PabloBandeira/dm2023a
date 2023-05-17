@@ -13,26 +13,26 @@ require("rpart")
 options(error = function() { 
   traceback(20); 
   options(error = NULL); 
-  stop("exiting after script error") 
+  stop("exiting after script error")
 })
 
 
 # inicio parametros experimento
 PARAM  <- list()
 
-PARAM$experimento  <- "KA3720"
+PARAM$experimento  <- "KA3720v2"
 
-PARAM$semilla  <- 102191
-PARAM$input$dataset       <- "./datasets/dataset_pequeno.csv"
+PARAM$semilla  <- 271991
+PARAM$input$dataset       <- "C:/Users/Admin/Desktop/PABLO.BANDEIRA/datasets/dataset_pequeno.csv"
 PARAM$input$training      <- c( 202107 )  # los meses en los que vamos a entrenar
 PARAM$input$future        <- c( 202109 )  #meses donde se aplica el modelo
 
-PARAM$rpart$cp         <-  -0.70530886
-PARAM$rpart$minsplit   <- 570.4201355177
-PARAM$rpart$minbucket  <- 263.5313442153
-PARAM$rpart$mixdepth   <-   8
+PARAM$rpart$cp         <-  -0.171603343882233
+PARAM$rpart$minsplit   <- 2548.25695525445
+PARAM$rpart$minbucket  <- 998.811244050081
+PARAM$rpart$mixdepth   <-   13
 
-PARAM$prob_corte       <-   0.0438416027
+PARAM$prob_corte       <-   0.0533118072372519
 
 # fin parametros experimento
 
@@ -41,7 +41,7 @@ PARAM$prob_corte       <-   0.0438416027
 
 
 #Aqui se debe poner la carpeta de la materia de SU computadora local
-setwd("~/buckets/b1/")  #Establezco el Working Directory
+setwd("C:/Users/Admin/Desktop/PABLO.BANDEIRA")  #Establezco el Working Directory
 
 #cargo el dataset
 dataset  <- fread(PARAM$input$dataset)
@@ -124,3 +124,4 @@ for( corte  in  c( 8000, 8500, 9000, 9500, 10000, 10500, 11000 ) )
            file= paste0( PARAM$experimento, "_001_",  corte, ".csv"),
            sep=  "," )
 }
+

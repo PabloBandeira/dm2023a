@@ -46,8 +46,8 @@ PARAM$BO$iteraciones  <- 100        #cantidad de iteraciones de la optimizacin b
 
 PARAM$BO$hs  <- makeParamSet(
                   makeNumericParam("cp"       , lower=  -1.0,   upper=     0.1),
-                  makeNumericParam("minsplit" , lower=   1,     upper= 20000  ),
-                  makeNumericParam("minbucket", lower=   1,     upper=  5000  ),
+                  makeIntegerParam("minsplit" , lower=   1,     upper= 20000  ),
+                  makeIntegerParam("minbucket", lower=   1,     upper=  5000  ),
                   makeIntegerParam("maxdepth" , lower=   3L,    upper=    20L ),  # la letra L al final significa ENTERO
                   makeNumericParam("prob_corte",lower=    0.01, upper=     0.1),
                   forbidden = quote( minbucket > 0.5*minsplit ) )               # minbucket NO PUEDE ser mayor que la mitad de minsplit

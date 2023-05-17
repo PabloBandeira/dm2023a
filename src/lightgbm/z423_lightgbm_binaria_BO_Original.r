@@ -39,14 +39,14 @@ PARAM$input$dataset       <- "./datasets/dataset_pequeno.csv"
 PARAM$input$training      <- c( 202107 )  # los meses en los que vamos a entrenar
 
 PARAM$trainingstrategy$undersampling  <-  1.0    # un undersampling de 0.1  toma solo el 10% de los CONTINUA
-PARAM$trainingstrategy$semilla_azar   <- 271991  #Aqui poner su  primer  semilla
+PARAM$trainingstrategy$semilla_azar   <- 102191  #Aqui poner su  primer  semilla
 
 PARAM$hyperparametertuning$iteraciones <- 100
 PARAM$hyperparametertuning$xval_folds  <- 5
 PARAM$hyperparametertuning$POS_ganancia  <- 117000
 PARAM$hyperparametertuning$NEG_ganancia  <-  -3000
 
-PARAM$hyperparametertuning$semilla_azar  <- 272029  #Aqui poner su segunda semilla
+PARAM$hyperparametertuning$semilla_azar  <- 200177  #Aqui poner su segunda semilla
 
 #Aqui se cargan los bordes de los hiperparametros
 PARAM$hyperparametertuning$hs  <- makeParamSet(
@@ -127,9 +127,9 @@ EstimarGanancia_lightgbm  <- function( x )
                           feature_pre_filter= FALSE,
                           verbosity= -100,
                           max_depth=  -1,         # -1 significa no limitar,  por ahora lo dejo fijo
-                          min_gain_to_split= 2.0, #por ahora, lo dejo fijo
-                          lambda_l1= 50.0,         #por ahora, lo dejo fijo
-                          lambda_l2= 50.0,         #por ahora, lo dejo fijo
+                          min_gain_to_split= 0.0, #por ahora, lo dejo fijo
+                          lambda_l1= 0.0,         #por ahora, lo dejo fijo
+                          lambda_l2= 0.0,         #por ahora, lo dejo fijo
                           max_bin= 31,            #por ahora, lo dejo fijo
                           num_iterations= 9999,   #un numero muy grande, lo limita early_stopping_rounds
                           force_row_wise= TRUE,   #para que los alumnos no se atemoricen con tantos warning
