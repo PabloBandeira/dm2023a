@@ -14,19 +14,19 @@ require("lightgbm")
 #defino los parametros de la corrida, en una lista, la variable global  PARAM
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
-PARAM$experimento  <- "KA4240"
+PARAM$experimento  <- "KA4240v3"
 
-PARAM$input$dataset       <- "./datasets/dataset_pequeno.csv"
+PARAM$input$dataset       <- "C:/Users/Admin/Desktop/PABLO.BANDEIRA/datasets/dataset_pequeno.csv"
 PARAM$input$training      <- c( 202107 )   #meses donde se entrena el modelo
 PARAM$input$future        <- c( 202109 )   #meses donde se aplica el modelo
 
 PARAM$finalmodel$semilla           <- 271991
 
-PARAM$finalmodel$num_iterations    <-  78
-PARAM$finalmodel$learning_rate     <-    0.0800501113446005
-PARAM$finalmodel$feature_fraction  <-    0.591418558639078
-PARAM$finalmodel$min_data_in_leaf  <-    6422
-PARAM$finalmodel$num_leaves        <-     179
+PARAM$finalmodel$num_iterations    <-  283
+PARAM$finalmodel$learning_rate     <-    0.172540169983096
+PARAM$finalmodel$feature_fraction  <-    0.453011507104493
+PARAM$finalmodel$min_data_in_leaf  <-    1757
+PARAM$finalmodel$num_leaves        <-     140
 
 
 PARAM$finalmodel$max_bin           <-     31
@@ -35,7 +35,7 @@ PARAM$finalmodel$max_bin           <-     31
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #Aqui empieza el programa
-setwd( "~/buckets/b1" )
+setwd( "C:/Users/Admin/Desktop/PABLO.BANDEIRA" )
 
 #cargo el dataset donde voy a entrenar
 dataset  <- fread(PARAM$input$dataset, stringsAsFactors= TRUE)
