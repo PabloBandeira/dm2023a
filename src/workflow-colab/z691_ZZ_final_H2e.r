@@ -194,11 +194,11 @@ for( modelo_rank in  PARAM$modelos_rank )
     tb_prediccion[ , prob := prediccion ]
     
     
-    tb_prediccion_sc <- tb_prediccion[foto_mes == "202109", ]
+    #tb_prediccion_sc <- tb_prediccion[foto_mes == "202109", ]
     tb_prediccion <- tb_prediccion[foto_mes != "202109", ]
     
     
-    tb_prediccion_sc[, .(count = .N),  by = foto_mes]
+    #tb_prediccion_sc[, .(count = .N),  by = foto_mes]
     tb_prediccion[, .(count = .N),  by = foto_mes]
     
     
@@ -245,33 +245,9 @@ for( modelo_rank in  PARAM$modelos_rank )
     
     
     setorder( tb_prediccion, -prob )
-    setorder( tb_prediccion_sc, -prob)
+    #setorder( tb_prediccion_sc, -prob)
     
-    #sin clase
-    #tb_prediccion_sc  <- dfuture_sc[ , list( numero_de_cliente, foto_mes, clase_ternaria ) ]
-    #tb_prediccion_sc[ , prob := prediccion ]
-    
-    
-    {
-      #genero los archivos para Kaggle
-      for( corte in cortes )
-      {
-        tb_prediccion_sc[ , Predicted := 0L ]
-        tb_prediccion_sc[ 1:corte, Predicted := 1L ]
-        
-        nom_submit  <- paste0( PARAM$experimento,
-                               "_",
-                               nombre_raiz,
-                               "_",
-                               sprintf( "%05d", corte ),
-                               ".csv" )
-        
-        fwrite( tb_prediccion_sc[ , list( numero_de_cliente, Predicted ) ],
-                file= nom_submit,
-                sep= "," )
-      }
-    }
-    
+  
     #conclase
     {
       tb_prediccion[ , ganancia_acum := cumsum( ifelse(clase_ternaria== "BAJA+2", 117000, -3000)) ]
@@ -281,7 +257,7 @@ for( modelo_rank in  PARAM$modelos_rank )
     
     #borro y limpio la memoria para la vuelta siguiente del for
     rm( tb_prediccion )
-    rm( tb_prediccion_sc )
+ #   rm( tb_prediccion_sc )
     rm( tb_importancia )
     rm( modelo_final )
     gc()
@@ -392,7 +368,3 @@ system( "sleep 10  &&
         export ZONE=$(curl -X GET http://metadata.google.internal/computeMetadata/v1/instance/zone -H 'Metadata-Flavor: Google') &&
         gcloud --quiet compute instances delete $NAME --zone=$ZONE",
         wait= FALSE )
-
-
-
-
