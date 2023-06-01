@@ -19,7 +19,7 @@ PARAM$experimento  <- "CAv3"
 PARAM$dataset  <- "./datasets/competencia_2023.csv.gz"
 
 PARAM$metodo  <- "MachineLearning"     #valores posibles  "MachineLearning"  "EstadisticaClasica" "Ninguno"
-PARAM$home  <- "~/buckets/b1/"
+PARAM$home  <- "~/buckets/b4/"
 # FIN Parametros del script
 
 OUTPUT  <- list()
