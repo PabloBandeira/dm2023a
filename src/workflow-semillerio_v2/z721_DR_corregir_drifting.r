@@ -18,7 +18,7 @@ require("yaml")
 PARAM  <- list()
 PARAM$experimento  <- "DRv2"
 
-PARAM$exp_input  <- "CAv1"
+PARAM$exp_input  <- "CAv2"
 
 PARAM$variables_intrames  <- TRUE   # atencion esto esta en TRUE
 
