@@ -24,7 +24,7 @@ PARAM$experimento  <- "ZZv6v2"
 PARAM$exp_input  <- "HTv6"
 
 PARAM$modelos_rank  <- c( 3 )  #Que modelos quiero, segun su posicion en el ranking e la Bayesian Optimizacion, ordenado por ganancia descendente
-PARAM$semillerio  <- 100   # cantidad de semillas a utilizar en el semillerio, podrian ser 50 o 100 para mayor estabilidad
+PARAM$semillerio  <- 10   # cantidad de semillas a utilizar en el semillerio, podrian ser 50 o 100 para mayor estabilidad
 PARAM$semilla_primos  <- 272011  # se utiliza para generar el vector de  PARAM$semillerio  semillas
 
 PARAM$kaggle$envios_desde  <-  9500L
