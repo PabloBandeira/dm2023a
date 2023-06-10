@@ -27,7 +27,7 @@ PARAM$modelos_rank  <- c( 1 )  #Que modelos quiero, segun su posicion en el rank
 PARAM$semillerio  <- 100   # cantidad de semillas a utilizar en el semillerio, podrian ser 50 o 100 para mayor estabilidad
 PARAM$semilla_primos  <- 271991  # se utiliza para generar el vector de  PARAM$semillerio  semillas
 
-PARAM$kaggle$envios_desde  <-  9500L
+PARAM$kaggle$envios_desde  <-  9000L
 PARAM$kaggle$envios_hasta  <- 12000L
 PARAM$kaggle$envios_salto  <-   500L
 
