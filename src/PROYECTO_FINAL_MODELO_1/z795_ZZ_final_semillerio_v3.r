@@ -20,11 +20,11 @@ require("lightgbm")
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "ZZv4v4"
+PARAM$experimento  <- "ZZv4v3"
 PARAM$exp_input  <- "HTv4"
 
-PARAM$modelos_rank  <- c( 4 )  #Que modelos quiero, segun su posicion en el ranking e la Bayesian Optimizacion, ordenado por ganancia descendente
-PARAM$semillerio  <- 61   # cantidad de semillas a utilizar en el semillerio, podrian ser 50 o 100 para mayor estabilidad
+PARAM$modelos_rank  <- c( 2 )  #Que modelos quiero, segun su posicion en el ranking e la Bayesian Optimizacion, ordenado por ganancia descendente
+PARAM$semillerio  <- 100   # cantidad de semillas a utilizar en el semillerio, podrian ser 50 o 100 para mayor estabilidad
 PARAM$semilla_primos  <- 271991  # se utiliza para generar el vector de  PARAM$semillerio  semillas
 
 PARAM$kaggle$envios_desde  <-  9500L
